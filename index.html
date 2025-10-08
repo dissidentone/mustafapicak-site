@@ -1,71 +1,745 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="tr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa Pıçak - Backend Developer</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Courier New', monospace;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #1E1E1E;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            border-bottom: 2px solid #00A8E8;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        .button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background: #00A8E8;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .button:hover {
-            background: #0077B6;
-        }
-        .projects, .contact {
-            background: #1E1E1E;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mustafa Pıçak — Full Stack & Mekatronik Mühendisi</title>
+  <meta name="description" content="Full Stack & Mekatronik Mühendisi. Backend, otomasyon, CNC ve elektronik entegrasyonlarıyla uçtan uca sistem kurarım." />
+  <meta property="og:title" content="Mustafa Pıçak — Full Stack & Mekatronik Mühendisi" />
+  <meta property="og:description" content="Kodu değil sistemi kurarım: API, veri, otomasyon ve sahadaki gerçek üretim." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mustafapicak.com" />
+  <meta property="og:image" content="/og-banner.jpg" />
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { backdrop-filter: blur(10px); background: rgba(18,18,18,.55); }
+    .grad  { background: radial-gradient(1200px 600px at 10% 10%, #0ea5e955, transparent),
+                         radial-gradient(1000px 500px at 90% 20%, #22c55e44, transparent),
+                         radial-gradient(900px 500px at 50% 90%, #a78bfa33, transparent); }
+    .shine { position: relative; overflow: hidden; }
+    .shine::after{ content:""; position:absolute; inset:-200% -50%; background: linear-gradient(60deg, transparent 35%, rgba(255,255,255,.12) 50%, transparent 65%);
+      transform: translateX(-60%) rotate(8deg); animation: shine 8s linear infinite; }
+    @keyframes shine { 0%{ transform: translateX(-60%) rotate(8deg);} 100%{ transform: translateX(60%) rotate(8deg);} }
+    details[open] summary .chev { transform: rotate(90deg); }
+    .kpi { display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:.65rem; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); font-size:.8rem; }
+    .pill { display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:.65rem; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); font-size:.8rem; }
+  </style>
 </head>
-<body>
-    <header>Mustafa Pıçak - Backend Developer</header>
-    <div class="container">
-        <h2>Merhaba! Ben Mustafa.</h2>
-        <p>Backend geliştirme, otomasyon ve veritabanı sistemleri ile ilgileniyorum.</p>
-        <a href="#projects" class="button">Projelerim</a>
-        <a href="#contact" class="button">İletişim</a>
+<body class="bg-zinc-950 text-zinc-100 selection:bg-cyan-400/30">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 border-b border-white/5 bg-zinc-950/70 glass">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <a href="#" class="font-semibold tracking-tight">Mustafa Pıçak</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
+        <a href="#works" class="hover:text-white">Projeler</a>
+        <a href="#cases" class="hover:text-white">Vaka Özetleri</a>
+        <a href="#skills" class="hover:text-white">Yetenekler</a>
+        <a href="#experience" class="hover:text-white">Deneyim</a>
+        <a href="#services" class="hover:text-white">Hizmetler</a>
+        <a href="#mecha" class="hover:text-white">Mekatronik</a>
+        <a href="#metrics" class="hover:text-white">Ölçümler</a>
+        <a href="#process" class="hover:text-white">Süreç</a>
+        <a href="#about" class="hover:text-white">Hakkımda</a>
+        <a href="#contact" class="hover:text-white">İletişim</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button disabled class="inline-flex items-center rounded-xl bg-white/5 px-3 py-2 text-xs text-zinc-400 cursor-not-allowed" title="TR aktif, EN/DE yakında">TR ▾</button>
+        <a href="#contact" class="inline-flex items-center rounded-xl bg-white/10 px-4 py-2 text-sm hover:bg-white/20">İş Teklifi</a>
+      </div>
     </div>
-    <div class="container projects" id="projects">
-        <h3>Projelerim</h3>
-        <p>📌 <b>Bgen2</b> - Otomatik backend proje oluşturucu</p>
-        <p>📌 <b>ERPNext Çalışmaları</b> - Entegrasyon ve geliştirmeler</p>
-        <p>📌 <b>JWT Auth API</b> - Güvenli kimlik doğrulama sistemleri</p>
-        <p>📌 <b>MongoDB + Express.js API</b> - Veri tabanı optimizasyonları</p>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 grad opacity-30"></div>
+    <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
+          <span>Full Stack & Mekatronik Mühendisi</span>
+          <span class="h-1 w-1 rounded-full bg-emerald-400"></span>
+          <span>Kurucu · MVP Garaj</span>
+          <span class="h-1 w-1 rounded-full bg-emerald-400"></span>
+          <span>İzmit, Türkiye</span>
+        </p>
+        <h1 class="text-4xl font-bold tracking-tight md:text-6xl">Kodu değil <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">sistemi kurarım</span>.</h1>
+        <p class="mt-4 text-lg text-zinc-300">Backend, otomasyon ve veriden; CNC, sensör ve sürücülere kadar — yazılım ile donanımı aynı mimaride birleştirir, üretime uygun çözümler kurarım.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#works" class="rounded-xl bg-cyan-500 px-5 py-3 font-medium text-zinc-950 hover:bg-cyan-400 shine">Projeleri Gör</a>
+          <a href="#cases" class="rounded-xl border border-white/10 px-5 py-3 font-medium hover:bg-white/5">Vaka Özetleri</a>
+          <a href="#cv" class="rounded-xl border border-white/10 px-5 py-3 font-medium hover:bg-white/5">CV (TR)</a>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-2 text-xs text-zinc-400">
+          <span class="rounded-full bg-white/5 px-3 py-1">Node.js · Express · NestJS</span>
+          <span class="rounded-full bg-white/5 px-3 py-1">PostgreSQL · MongoDB · Redis</span>
+          <span class="rounded-full bg-white/5 px-3 py-1">Docker · Kubernetes · CI/CD</span>
+          <span class="rounded-full bg-white/5 px-3 py-1">CNC · PLC/HMI · ROS</span>
+          <span class="rounded-full bg-white/5 px-3 py-1">Automation · n8n · WebSockets</span>
+        </div>
+      </div>
     </div>
-    <div class="container contact" id="contact">
-        <h3>İletişim</h3>
-        <p>📧 E-posta: <a href="mailto:mustafa@ornek.com" style="color:#00A8E8;">mustafa@ornek.com</a></p>
-        <p>🔗 GitHub: <a href="https://github.com/mustafapicak" target="_blank" style="color:#00A8E8;">github.com/mustafapicak</a></p>
-        <p>🔗 LinkedIn: <a href="https://linkedin.com/in/mustafapicak" target="_blank" style="color:#00A8E8;">linkedin.com/in/mustafapicak</a></p>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <div class="mb-8 flex items-end justify-between">
+      <h2 class="text-2xl font-semibold md:text-3xl">Seçili Projeler</h2>
+      <span class="text-sm text-zinc-400">Yazılım + Mekanik + Otomasyon</span>
     </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- MVP Garaj -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-emerald-400">MVP Garaj · Field Ops</span>
+          <span class="text-xs text-zinc-400">2024–</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Bakım & Operasyon Otomasyonu</h3>
+        <p class="mt-2 text-zinc-300">Şube bazlı bakım formları, QR ile iş emri, stok/parça takibi. Jotform → n8n → Backend akışlarıyla ölçülebilir süreç.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          $1
+          <span class="kpi">Kurucu</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+      <!-- Bgen2 -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-cyan-400">MVP Tech · Tooling</span>
+          <span class="text-xs text-zinc-400">2025</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Bgen2 — Backend Proje Üreteci</h3>
+        <p class="mt-2 text-zinc-300">Auth, CRUD, dokümantasyon ve Docker yapılarını dakikalar içinde. Yeni proje açılışında ciddi hızlanma.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <span class="kpi">Kurulum hızı ≈ %40↑</span>
+          <span class="kpi">Standart hata ↓</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+      <!-- ERPNext -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-fuchsia-400">Entegrasyon</span>
+          <span class="text-xs text-zinc-400">2024–2025</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">ERPNext Entegrasyonları</h3>
+        <p class="mt-2 text-zinc-300">Servis/iş emri, stok ve müşteri verisini harici sistemlerle çift yönlü senkron eden entegrasyonlar.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <span class="kpi">Senkron gecikmesi < 2 sn</span>
+          <span class="kpi">Manuel giriş ↓</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+      <!-- JWT API -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-amber-400">Backend</span>
+          <span class="text-xs text-zinc-400">2023–2025</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">JWT Auth API · MongoDB + Express</h3>
+        <p class="mt-2 text-zinc-300">Rol/Yetki yönetimi, hız limitleme ve gözlemlenebilirlik ile üretime hazır API şablonları.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <span class="kpi">RPS ↑</span>
+          <span class="kpi">403/429 kontrolü</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+      <!-- FoodBu USA -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-rose-400">Robotik & Görüntü İşleme</span>
+          <span class="text-xs text-zinc-400">2022–2024</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Otonom Otomat & Robotik Sistemler</h3>
+        <p class="mt-2 text-zinc-300">5/6 eksenli robot entegrasyonu, görüntü işleme ve derin öğrenme destekli otomasyon prototipleri.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <span class="kpi">Prototip → üretim</span>
+          <span class="kpi">Test süresi ↓</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+      <!-- 3E Group -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-lime-400">CNC & PLC</span>
+          <span class="text-xs text-zinc-400">2023</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">6 Eksen CNC Kesim Otomasyonu</h3>
+        <p class="mt-2 text-zinc-300">PLC kontrol, HMI arayüzleri ve elektronik pano kurulumları; üretime uygun hat entegrasyonu.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <span class="kpi">Setup süresi ↓</span>
+          <span class="kpi">Hata tekrarı ↓</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+      <!-- X-Ray Installations -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-purple-400">Medikal Cihaz</span>
+          <span class="text-xs text-zinc-400">2023</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">4/5 Eksen Dijital X-Ray Kurulumları</h3>
+        <p class="mt-2 text-zinc-300">Devlet hastanelerinde 16 cihaz kurulumu; arıza/kalibrasyon ve eğitim süreçleri.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <span class="kpi">16 kurulum</span>
+          <span class="kpi">Uptime ↑</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+      <!-- CNC 4th Axis Kit -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-sky-400">CNC Eki</span>
+          <span class="text-xs text-zinc-400">2016</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">CNC 4. Eksen Rotary Kit (KOSGEB)</h3>
+        <p class="mt-2 text-zinc-300">Rotary eksen tasarımı ve Mitsubishi M-80A kontrol ile entegrasyon; hat doğrulama.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <span class="kpi">Döngü süresi ↓</span>
+          <span class="kpi">Tekrarlanabilirlik ↑</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+      <!-- IC & PCB Designs -->
+      <article class="group rounded-2xl border border-white/10 bg-white/5 p-5 hover:border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-amber-300">Elektronik</span>
+          <span class="text-xs text-zinc-400">2013</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">IC & PCB Tasarımları</h3>
+        <p class="mt-2 text-zinc-300">Analog/dijital kart çizimleri, gömülü C ve gömülü Linux ile üretime hazırlık; kalite kontrol süreçleri.</p>
+        <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <span class="kpi">EMC/EMI gözetimi</span>
+          <span class="kpi">Üretim geçişi</span>
+          <a href="#cases" class="ml-auto text-zinc-300 hover:text-white">Detay →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section id="cases" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <h2 class="text-2xl font-semibold md:text-3xl">Vaka Özetleri</h2>
+    <p class="mt-3 text-zinc-300">Aşağıdaki özetler; yazılım, otomasyon ve robotik alanlarının birlikte çalıştığı işleri öne çıkarır.</p>
+
+    <div class="mt-6 space-y-3">
+      <!-- Case: Bgen2 -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> Bgen2 — Backend Proje Üreteci</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>JWT kimlik doğrulama, rol/yetki, CRUD şablonları.</li>
+            <li>Dokümantasyon, test iskeletleri ve Docker hazır kurulum.</li>
+            <li><strong>Sonuç:</strong> Yeni proje kurulum hızı <em>≈%40</em> artış.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: DevOps Otomasyonu -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> CI/CD & Konteynerize Ortamlar</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Docker tabanlı geliştirme ve üretim ortamları.</li>
+            <li>GitHub Actions/Jenkins ile uçtan uca CI/CD.</li>
+            <li><strong>Sonuç:</strong> Manuel deploy süresi <em>≈%50</em> düşüş.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: ERPNext -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> ERPNext Entegrasyonları</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Servis/iş emri, stok ve müşteri verilerinin iki yönlü senkronu.</li>
+            <li>Webhook/REST ile güvenli veri akışı, hata yakalama.</li>
+            <li><strong>Sonuç:</strong> Senkron gecikmesi <em>&lt;2 sn</em>; manuel giriş azalır.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: MVP Garaj -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> MVP Garaj — Operasyon Otomasyonu</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Şube bazlı bakım formları ve QR iş emri.</li>
+            <li>Parça/stok takibi ile izlenebilirlik ve raporlama.</li>
+            <li><strong>Sonuç:</strong> İş emri açılışı <em>5 → 2 dk</em>; kayıp parça <em>≈%30</em> düşüş.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: FoodBu -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> Otonom Otomat & Robotik (FoodBu USA)</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>5/6 eksenli robot entegrasyonları; kamera tabanlı kalite kontrol.</li>
+            <li>Derin öğrenme destekli test sistemleri; sahada prototip iterasyonları.</li>
+            <li><strong>Sonuç:</strong> Test süresi kısalır; prototipten üretime geçiş netleşir.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: X-Ray -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> 4/5 Eksen Dijital X-Ray Kurulumları</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Kurulum, kalibrasyon ve arıza giderme; eğitim süreçleri.</li>
+            <li>Devlet hastanelerinde 16 cihaz kurulumu.</li>
+            <li><strong>Sonuç:</strong> Uptime ↑, servis aralığı optimize.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: 3E Group -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> 6 Eksen CNC Kesim Otomasyonu (3E Group)</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>PLC kontrol sistemi ve HMI arayüzleri; pano kurulumları.</li>
+            <li>SolidWorks tabanlı mekanik revizyon ve uygunluk.</li>
+            <li><strong>Sonuç:</strong> Setup ve hata tekrarı düşer; bakım kolaylaşır.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: CNC 4th axis kit -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> CNC 4. Eksen Rotary Kit (KOSGEB)</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Rotary eksen tasarımı; Mitsubishi M-80A entegrasyonu.</li>
+            <li>Hat doğrulama ve proses onayı.</li>
+            <li><strong>Sonuç:</strong> Döngü süresi azalır; tekrarlanabilirlik artar.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: IC/PCB -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> IC & PCB Tasarımları</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Analog/dijital devre, gömülü C ve gömülü Linux.</li>
+            <li>Üretime hazırlık, test ve kalite kontrol.</li>
+            <li><strong>Sonuç:</strong> EMC/EMI uygunluğu; hatasız üretim geçişi.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Case: Pnömatik Konveyör -->
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4">
+        <summary class="flex cursor-pointer items-center gap-2 text-lg font-medium"> <span class="chev transition">▸</span> Pnömatik Kontrollü Konveyör Hattı</summary>
+        <div class="mt-3 text-zinc-300">
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Sensör/PLC entegrasyonu, emniyetli duruş ve kilitleme.</li>
+            <li>Bakım kolaylığı için modüler alt takımlar.</li>
+            <li><strong>Sonuç:</strong> MTTR düşer; operatör hatası azalır.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- SKILLS / CV -->
+  <section id="skills" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <div class="grid gap-10 md:grid-cols-2">
+      <div>
+        <h2 id="cv" class="text-2xl font-semibold md:text-3xl">Yetenekler & CV</h2>
+        <p class="mt-3 text-zinc-300">Mühendislik yönetimi yüksek lisanslı mekatronik mühendisi ve backend ağırlıklı full stack geliştirici. Yazılım ve donanımı tek mimaride buluştururum.</p>
+        <div class="mt-6 grid grid-cols-2 gap-2 text-sm text-zinc-300">
+          <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+            <div class="text-xs uppercase tracking-wide text-zinc-400">Yazılım</div>
+            <ul class="mt-2 space-y-1">
+              <li>Node.js · Express · NestJS</li>
+              <li>REST · GraphQL · WebSockets</li>
+              <li>PostgreSQL · MongoDB · MySQL · Redis</li>
+              <li>Docker · Kubernetes · GitHub Actions · Jenkins</li>
+              <li>JWT · OAuth2 · RBAC</li>
+              <li>React · TailwindCSS · Next.js (gerektiğinde)</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+            <div class="text-xs uppercase tracking-wide text-zinc-400">Mekanik / Elektronik</div>
+            <ul class="mt-2 space-y-1">
+              <li>SolidWorks · AutoCAD</li>
+              <li>PLC/HMI (Siemens TIA)</li>
+              <li>Sensör · Step/Servo Kontrol</li>
+              <li>MATLAB · Proteus · ANSYS</li>
+              <li>ROS · Gömülü C · Gömülü Linux</li>
+              <li>PCB Tasarım · EMC/EMI</li>
+            </ul>
+          </div>
+        </div>
+        <a href="/Mustafa_Pıçak_CV_TR.pdf" class="mt-6 inline-flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2 text-sm hover:bg-white/20">CV'yi indir (TR, PDF)</a>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-900 to-zinc-800 p-6">
+        <h3 class="text-lg font-semibold">Yaklaşım</h3>
+        <p class="mt-2 text-zinc-300">"Kodu değil sistemi kurarım": gereksinim → mimari → uygulama → devreye alma → ölçüm. Yazılım ve donanımı aynı sistemde ele alırım.</p>
+        <ul class="mt-4 list-disc space-y-1 pl-5 text-zinc-300">
+          <li>Üretime alınabilirlik ve bakım öncelikli tasarım</li>
+          <li>Gözlemlenebilirlik (log/metric/trace)</li>
+          <li>Maliyet/performans ve güvenlik dengesi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <h2 class="text-2xl font-semibold md:text-3xl">Deneyim</h2>
+    <div class="mt-6 space-y-4">
+      <!-- Founder MVP Garaj -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">MVP Garaj</span>
+          <span class="pill">Kurucu & Sistem Tasarımcısı</span>
+          <span class="pill">≈ 1+ yıl</span>
+          <span class="pill">Hybrid · Türkiye</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Kurucu · MVP Garaj</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>Alan operasyonları için bakım/iş emri otomasyonunun ürünleştirilmesi.</li>
+          <li>Jotform → n8n → Backend veri hattı; raporlama ve izlenebilirlik.</li>
+          <li>Teklif, teslim ve bakım süreçlerinin standartlaştırılması.</li>
+          <li>API mimarisi, entegrasyonlar ve DevOps (CI/CD, Docker).</li>
+        </ul>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400">
+          <span class="kpi">Kurucu</span><span class="kpi">Ürünleştirme</span><span class="kpi">Ops Otomasyon</span>
+        </div>
+      </article>
+
+      <!-- Freelance -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">Freelance · Tam zamanlı</span>
+          <span class="pill">≈ 3 yıl+</span>
+          <span class="pill">Remote · İzmit</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Backend Odaklı Full Stack Geliştirici</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>Backend geliştirme, API tasarımı ve sistem mimarisi.</li>
+          <li><strong>Bgen2</strong> — backend template generator ile proje setup hızlandırma.</li>
+          <li><strong>JWT Auth API</strong> ve veri yönetimi projeleri.</li>
+          <li><strong>ERPNext</strong> özelleştirme ve entegrasyon.</li>
+          <li>Docker, Kubernetes ve CI/CD hatlarıyla otomasyon.</li>
+          <li>Operasyon ve dağıtım süreçlerini optimize eden <strong>DevOps</strong> stratejileri.</li>
+        </ul>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400">
+          <span class="kpi">Pattern'lar</span><span class="kpi">Mikroservis</span><span class="kpi">REST/GraphQL/WebSockets</span><span class="kpi">Redis</span><span class="kpi">Node/Nest/.NET</span>
+        </div>
+      </article>
+
+      <!-- FoodBu -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">FoodBu U.S.A · Tam zamanlı</span>
+          <span class="pill">≈ 2 yıl</span>
+          <span class="pill">Hybrid · ABD</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Mekatronik/Robotik & Proje Direktörü</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>Otonom otomat üretimi için ekip liderliği.</li>
+          <li>5/6 eksenli robot öğrenimi ve otomasyon sistemleri kurulumu.</li>
+          <li>Görüntü işleme ve derin öğrenme tabanlı geliştirmeler.</li>
+          <li>Yapay zekâ destekli prototip yönetimi ve saha testleri.</li>
+        </ul>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400">
+          <span class="kpi">ROS</span><span class="kpi">DL & Vision</span><span class="kpi">Robotik Entegrasyon</span>
+        </div>
+      </article>
+
+      <!-- 3E Group -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">3E Group · Sözleşmeli</span>
+          <span class="pill">≈ 2 ay</span>
+          <span class="pill">Hybrid · İzmit</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Otomasyon Sistemleri Mühendisi</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>KOSGEB projesi kapsamında 6 eksenli çok amaçlı kesim makinesi kontrolü.</li>
+          <li>Malzeme tedariki, montaj, HMI tasarımı ve PLC kontrolör.</li>
+        </ul>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400"><span class="kpi">PLC/HMI</span><span class="kpi">CNC</span></div>
+      </article>
+
+      <!-- Render Medikal -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">Render Medikal · Tam zamanlı</span>
+          <span class="pill">≈ 5 ay</span>
+          <span class="pill">On-site · Ankara</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Teknik Destek, Arıza & Bakım-Onarım Mühendisi</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>4/5 eksenli dijital X-ray cihazlarının kurulum ve arızaları.</li>
+          <li>Devlet hastanelerinde 16 cihaz kurulumu ve devreye alma.</li>
+        </ul>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400"><span class="kpi">X-ray</span><span class="kpi">HIT/EMR</span><span class="kpi">Kalibrasyon</span></div>
+      </article>
+
+      <!-- KOU Lab -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">Kocaeli Üni. Otomasyon Lab · Sözleşmeli</span>
+          <span class="pill">≈ 1 yıl 2 ay</span>
+          <span class="pill">Kocaeli</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Asistan & Stajyer Mühendis</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>Bitirme/tez projelerine teknik çözüm desteği.</li>
+          <li>Elektrikli araç: güç elektroniği ve kontrol kartları.</li>
+          <li>Otonom çim biçme: mekanik + PCB + Arduino yazılımı.</li>
+          <li>Robot kolları, BLDC/DC motor kontrol çalışmaları.</li>
+          <li>Hidrolik/pnömatik projelerde devre çizimleri.</li>
+          <li>CNC için 4. eksen (rotary) tasarımı.</li>
+          <li>Fuzzy kontrol (Simulink) ve çizgi izleyen robot.</li>
+        </ul>
+      </article>
+
+      <!-- Federal-Mogul -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">Federal-Mogul Powertrain · Staj</span>
+          <span class="pill">≈ 3 ay</span>
+          <span class="pill">Kocaeli</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Mühendis Stajyeri</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>Piston/liner tasarım verimliliği üzerinde iyileştirme çalışmaları.</li>
+          <li>Robot kolları ve otomasyon verimliliği gözlemleri.</li>
+        </ul>
+      </article>
+
+      <!-- Ceylan Makina -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">Ceylan Makina · Sözleşmeli</span>
+          <span class="pill">≈ 9 ay</span>
+          <span class="pill">Hybrid</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Proje Tasarım & Yönetim Mühendisi</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>CNC makineleri için 4. eksen set tasarımı ve entegrasyonu.</li>
+          <li>Mitsubishi M-80A kontrol ünitesi ile doğrulama.</li>
+        </ul>
+      </article>
+
+      <!-- Elbistan Uğur Elektrik -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">Elbistan Uğur Elektrik · Freelance</span>
+          <span class="pill">≈ 6 ay</span>
+          <span class="pill">On-site</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Proje Mühendisi</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>Damla sulama boru seri üretimi için konveyör tasarım/montaj.</li>
+          <li>Pano tasarımı ve otomasyon kurulumu.</li>
+        </ul>
+      </article>
+
+      <!-- Kılıç Elektronik -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+          <span class="pill">Kılıç Elektronik · Tam zamanlı</span>
+          <span class="pill">≈ 5 ay</span>
+          <span class="pill">Hybrid</span>
+        </div>
+        <h3 class="mt-2 text-xl font-semibold">Entegre Devre Tasarım Mühendisi</h3>
+        <ul class="mt-2 list-disc pl-5 text-zinc-300 space-y-1">
+          <li>Elektronik kart çizimleri, montaj ve kalite kontrol.</li>
+          <li>Özel kart tasarımları ve arayüz geliştirme; gömülü yazılım.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- SHOP / MVP GARAJ -->
+  <section id="shop" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <div class="flex items-end justify-between">
+      <h2 class="text-2xl font-semibold md:text-3xl">MVP Garaj — Ne yapıyoruz?</h2>
+      <span class="text-sm text-zinc-400">Atölye + Yazılım = Ürünleştirilmiş Çözüm</span>
+    </div>
+    <p class="mt-3 text-zinc-300">Dükkanın işi net: sahadaki derdi çözüp ölçülebilir çıktıya çevirmek. Kod, metal ve lojik aynı tezgâhta.</p>
+
+    <div class="mt-6 grid gap-4 md:grid-cols-3">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="font-semibold">Operasyon & Bakım Çözümleri</h3>
+        <p class="mt-2 text-zinc-300">İş emri/QR, varlık & stok, planlı bakım. ERPNext/REST köprüleri.</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400"><span class="kpi">İş emri 5→2 dk</span><span class="kpi">Senkron <2 sn</span></div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="font-semibold">Backend & DevOps</h3>
+        <p class="mt-2 text-zinc-300">API tasarımı, Bgen2 starter kit, AuthMS, CI/CD ve konteyner altyapı.</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400"><span class="kpi">Setup ≈%40↑</span><span class="kpi">Manuel deploy ≈%50↓</span></div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="font-semibold">Robotik, CNC & PLC</h3>
+        <p class="mt-2 text-zinc-300">5/6 eksen robot hücreleri, CNC entegrasyon, PLC/HMI ve pano işleri.</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-400"><span class="kpi">Setup ↓</span><span class="kpi">Tekrarlanabilirlik ↑</span></div>
+      </div>
+    </div>
+
+    <div class="mt-6 grid gap-4 md:grid-cols-3">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h4 class="font-semibold">Elektronik & Gömülü</h4>
+        <p class="mt-2 text-zinc-300">PCB/IC tasarımı, gömülü C/Linux, EMC/EMI gözetimi.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h4 class="font-semibold">IoT & Telemetri</h4>
+        <p class="mt-2 text-zinc-300">Sayaç/arıza kodu takibi, edge gateway, basit dashboard’lar.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h4 class="font-semibold">Eğitim & Danışmanlık</h4>
+        <p class="mt-2 text-zinc-300">Bakım süreçleri, güvenlik (LOTO), DevOps pratikleri.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-900 to-zinc-800 p-6">
+      <h3 class="text-lg font-semibold">Çalışma Biçimi</h3>
+      <ol class="mt-3 grid gap-3 md:grid-cols-5 text-sm">
+        <li class="rounded-xl border border-white/10 bg-white/5 p-3"><div class="text-zinc-400">01</div><div class="font-semibold">Keşif</div></li>
+        <li class="rounded-xl border border-white/10 bg-white/5 p-3"><div class="text-zinc-400">02</div><div class="font-semibold">Teklif</div></li>
+        <li class="rounded-xl border border-white/10 bg-white/5 p-3"><div class="text-zinc-400">03</div><div class="font-semibold">Sprint</div></li>
+        <li class="rounded-xl border border-white/10 bg-white/5 p-3"><div class="text-zinc-400">04</div><div class="font-semibold">Devreye Alma</div></li>
+        <li class="rounded-xl border border-white/10 bg-white/5 p-3"><div class="text-zinc-400">05</div><div class="font-semibold">Bakım</div></li>
+      </ol>
+      <div class="mt-4 text-sm text-zinc-400">Sektör: atölye/üretim, robotik hücre, medikal kurulumlar, saha servis.</div>
+      <div class="mt-4"><a href="#contact" class="inline-flex items-center rounded-xl bg-white/10 px-4 py-2 text-sm hover:bg-white/20">MVP Garaj’dan teklif al</a></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <h2 class="text-2xl font-semibold md:text-3xl">Hizmetler</h2>
+    <div class="mt-6 grid gap-4 md:grid-cols-2">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="text-lg font-semibold">Backend & API Mimarisi</h3>
+        <p class="mt-2 text-zinc-300">Üretime hazır REST/GraphQL API'ler, kimlik doğrulama, hız limitleme, loglama ve ölçeklenebilir veritabanı tasarımı.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="text-lg font-semibold">Otomasyon & Entegrasyon</h3>
+        <p class="mt-2 text-zinc-300">ERPNext ve benzeri sistemlerle çift yönlü veri akışı, webhook/REST köprüleri, n8n iş akışları.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="text-lg font-semibold">Robotik & CNC</h3>
+        <p class="mt-2 text-zinc-300">5/6 eksen robot entegrasyonu, CNC hatları, PLC/HMI kontrol ve sahaya uygun pano uygulamaları.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="text-lg font-semibold">Danışmanlık & Mühendislik Yönetimi</h3>
+        <p class="mt-2 text-zinc-300">Süreç analizi, maliyet/performans optimizasyonu, üretime alınabilirlik ve ölçek planı.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MECHATRONICS PRINCIPLES -->
+  <section id="mecha" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <h2 class="text-2xl font-semibold md:text-3xl">Mekatronik Farkındalığı</h2>
+    <p class="mt-3 text-zinc-300">Yazılım kararları, sahadaki gerçek kısıtlarla uyumlu olmalı. Aşağıdaki ilkeler projelerde temel rehberimdir:</p>
+    <div class="mt-6 grid gap-4 md:grid-cols-3 text-sm">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="font-semibold">Emniyet & Uygunluk</h3>
+        <ul class="mt-2 space-y-1 text-zinc-300 list-disc pl-5">
+          <li>Acil durdurma, kilitleme/etiketleme (LOTO)</li>
+          <li>Kablolama renk kodları, IP sınıfları</li>
+          <li>EMC/EMI gözetimi, topraklama</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="font-semibold">Bakım Kolaylığı</h3>
+        <ul class="mt-2 space-y-1 text-zinc-300 list-disc pl-5">
+          <li>Modüler alt takımlar, erişilebilir konnektörler</li>
+          <li>MTTR/MTBF odaklı tasarım</li>
+          <li>Parça standardizasyonu</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <h3 class="font-semibold">Ölçüm & İzlenebilirlik</h3>
+        <ul class="mt-2 space-y-1 text-zinc-300 list-disc pl-5">
+          <li>Veri günlüğü (log), trend ve alarm</li>
+          <li>Versiyon/BOM takibi, revizyon kontrol</li>
+          <li>FMEA ile risk azaltma</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS / KPIs -->
+  <section id="metrics" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <h2 class="text-2xl font-semibold md:text-3xl">Ölçümler & Sonuçlar</h2>
+    <p class="mt-3 text-zinc-300">Tipik kazanımlar; proje ve senaryoya göre değişir.</p>
+    <div class="mt-6 grid gap-3 md:grid-cols-3 text-sm">
+      <div class="rounded-xl border border-white/10 bg-white/5 p-4"><div class="kpi">Kurulum hızı ≈%40↑</div><div class="mt-1 text-zinc-400">Bgen2 / Proje açılışı</div></div>
+      <div class="rounded-xl border border-white/10 bg-white/5 p-4"><div class="kpi">Manuel deploy ≈%50↓</div><div class="mt-1 text-zinc-400">CI/CD otomasyonu</div></div>
+      <div class="rounded-xl border border-white/10 bg-white/5 p-4"><div class="kpi">Senkron gecikmesi < 2 sn</div><div class="mt-1 text-zinc-400">ERPNext entegrasyonu</div></div>
+      <div class="rounded-xl border border-white/10 bg-white/5 p-4"><div class="kpi">İş emri 5 → 2 dk</div><div class="mt-1 text-zinc-400">MVP Garaj</div></div>
+      <div class="rounded-xl border border-white/10 bg-white/5 p-4"><div class="kpi">Operatör hatası ↓</div><div class="mt-1 text-zinc-400">Konveyör hattı</div></div>
+      <div class="rounded-xl border border-white/10 bg-white/5 p-4"><div class="kpi">Setup süresi ↓</div><div class="mt-1 text-zinc-400">CNC & PLC</div></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <h2 class="text-2xl font-semibold md:text-3xl">Süreç</h2>
+    <ol class="mt-6 grid gap-4 md:grid-cols-5 text-sm">
+      <li class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="text-zinc-400">01</div><div class="font-semibold">Keşif</div><p class="mt-1 text-zinc-300">İhtiyaç, kısıt ve hedefleri netleştiririz.</p></li>
+      <li class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="text-zinc-400">02</div><div class="font-semibold">Mimari</div><p class="mt-1 text-zinc-300">Sistem tasarımı, teknoloji seçimi, güvenlik.</p></li>
+      <li class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="text-zinc-400">03</div><div class="font-semibold">Uygulama</div><p class="mt-1 text-zinc-300">Kod, donanım ve entegrasyonların kurulumu.</p></li>
+      <li class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="text-zinc-400">04</div><div class="font-semibold">Devreye Alma</div><p class="mt-1 text-zinc-300">Saha testleri, CI/CD ve izleme.</p></li>
+      <li class="rounded-2xl border border-white/10 bg-white/5 p-4"><div class="text-zinc-400">05</div><div class="font-semibold">Ölçüm</div><p class="mt-1 text-zinc-300">Log/metric ile sürekli iyileştirme.</p></li>
+    </ol>
+  </section>
+
+  <!-- ABOUT -->
+  $1Kocaeli Üniversitesi Mekatronik Mühendisliği (Lisans) ve Mühendislik Yönetimi (Yüksek Lisans). <strong>MVP Garaj/Tech/Machines'in kurucusuyum</strong>; yazılım, otomasyon ve üretimi aynı mimaride birleştiriyorum. Sahadan beslenen, ölçülebilir ve bakımı kolay sistemler kurarım.$3
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-6 text-zinc-300">
+        <p class="text-sm">“Excel, Jotform ve backend'i tek akışa bağladı; iş emri takibi netleşti, süreçteki belirsizlik azaldı. Sahadan anlayan mühendis farkı.”</p>
+        <div class="mt-3 text-xs text-zinc-400">— İş Ortağı Geri Bildirimi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <h2 class="text-2xl font-semibold md:text-3xl">Sık Sorulanlar</h2>
+    <div class="mt-6 grid gap-3 md:grid-cols-2">
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4"><summary class="cursor-pointer font-medium">Hangi teknoloji yığınını tercih ediyorsun?</summary><p class="mt-2 text-zinc-300">Backend'de Node.js (Express/Nest), veri katmanında PostgreSQL/MongoDB/Redis. Dağıtımda Docker/Kubernetes; CI/CD için GitHub Actions/Jenkins.</p></details>
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4"><summary class="cursor-pointer font-medium">Sadece yazılım mı yapıyorsun?</summary><p class="mt-2 text-zinc-300">Hayır. Robotik, CNC ve PLC/HMI tarafında saha deneyimim var; yazılımı donanımla birleştiren projeler tercih ediyorum.</p></details>
+      <details class="rounded-xl border border-white/10 bg-white/5 p-4"><summary class="cursor-pointer font-medium">Teslim sonrası destek veriyor musun?</summary><p class="mt-2 text-zinc-300">Evet. İzleme, log/metric/trace kurulumu ve planlı bakım ile sürekli iyileştirme sağlanır.</p></details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-6xl px-4 pb-20">
+    <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+      <h2 class="text-2xl font-semibold md:text-3xl">İletişim</h2>
+      <p class="mt-2 text-zinc-300">İş birliği, teklif, danışmanlık için yaz.</p>
+      <div class="mt-4 grid gap-4 md:grid-cols-3">
+        <a href="mailto:mustafa@mustafapicak.com" class="rounded-xl border border-white/10 bg-zinc-900 px-4 py-3 hover:bg-zinc-800">mustafa@mustafapicak.com</a>
+        <a href="https://github.com/dissidentone" class="rounded-xl border border-white/10 bg-zinc-900 px-4 py-3 hover:bg-zinc-800">GitHub</a>
+        <a href="https://www.linkedin.com/in/mustafapicak007" class="rounded-xl border border-white/10 bg-zinc-900 px-4 py-3 hover:bg-zinc-800">LinkedIn</a>
+      </div>
+    </div>
+    <footer class="mt-8 flex items-center justify-between text-xs text-zinc-500">
+      <span>© 2025 Mustafa Pıçak</span>
+      <span>MVP Systems: Code · Metal · Logic</span>
+    </footer>
+  </section>
 </body>
 </html>
